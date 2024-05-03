@@ -1,0 +1,250 @@
+<head>
+    
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+<!-- Include latest jquery.scrollTo, can download from https://github.com/flesler/jquery.scrollTo/releases -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Documentation | SnailDB</title>
+<meta name="description" content="A showcase of Simply Docs by MarketingPipeline built using Simple.CSS">
+    
+<link rel="stylesheet" href="/assets/style.css">
+
+    
+    
+<link rel="icon" href="/assets/images/favicon.png">
+<link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.min.js"></script>
+<link rel="icon" href="/assets/images/favicon.png">
+<link rel="apple-touch-icon" href="/assets/images/favicon.png">
+  </head>
+<header>
+  <nav>
+  
+    <a href="/">Home</a>
+    
+    <a href="./pages/documentation.html">Docs</a>
+    
+    
+    
+    <a href="https://github.com/cyberkutti-iedc/snaildb"><svg class="icon" viewBox="0 0 32 32"><path d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path></svg>Github</a>
+    
+  </nav>
+
+      <h1>Documentation</h1>
+      <p>Documentation for SnailDB.</p>
+    </header>  
+
+
+
+<main>
+      <fieldset>
+        <legend>Table Of Contents</legend>
+<ul>
+<li><a href="#about"><b>About SnailDB</a></b><ul>
+<li><a href="#quickstart">Quick Start</a></li>
+
+</ul>
+
+        </ul>
+        <ul>
+<li><a href="#examples"><b>Examples</a></b><ul>
+<li><a href="#delete">Delete</a></li>
+<li><a href="#query">Query</a></li>
+<li><a href="#about">About</a></li>
+</ul>      
+        
+      </fieldset>
+    
+
+
+      <article>
+        <h1 id="about">SnailDB: A Lightweight Python Database</h1>
+        <p>
+            SnailDB is a lightweight, non-SQL database for Python, designed to be simple and easy to use. Developed with simplicity and efficiency in mind, SnailDB provides basic CRUD (Create, Read, Update, Delete) operations along with query functionalities. <mark>BETA VERSION</mark>
+        </p>
+        <section>
+            <h2>Why SnailDB?</h2>
+            <div>
+                <h3>Lightweight and Simple</h3>
+                <p>
+                    Unlike traditional SQL databases, SnailDB doesn't require complex setups or installations. It's designed to be lightweight, making it perfect for small to medium-sized projects where simplicity is key.
+                </p>
+            </div>
+            <div>
+                <h3>Easy Integration</h3>
+                <p>
+                    With a simple API, integrating SnailDB into your Python projects is straightforward. Whether you're a beginner or an experienced developer, SnailDB's intuitive interface makes data management hassle-free.
+                </p>
+            </div>
+            <div>
+                <h3>Persistent Storage</h3>
+                <p>
+                    Data is stored in a JSON file, ensuring persistence across sessions. This means you don't have to worry about losing your data when the application is restarted.
+                </p>
+            </div>
+            <div>
+                <h3>Basic CRUD Operations</h3>
+                <p>
+                    SnailDB supports basic CRUD operations, allowing you to create, read, update, and delete data with ease. Whether you're storing user information, product details, or any other data, SnailDB has you covered.
+                </p>
+            </div>
+            <div>
+                <h3>Query Functionality</h3>
+                <p>
+                    Need to retrieve specific data? SnailDB offers query functionality that allows you to filter data based on field name, operator, and target value. This feature enhances data retrieval efficiency, saving you time and effort.
+                </p>
+            </div>
+        </section>
+        <section>
+            <h2 id="quickstart">Quick Start <a href="https://github.com/cyberkutti-iedc/SnailDB">SnailDB</a></h2>
+            <pre class="language-markup">
+                
+                
+                from snaildb import SnailDB
+                # Create a SnailDB instance
+                db = SnailDB("database.json", "data")
+                # Insert data
+                db.insert({"key": "1", "name": "John", "age": 30})
+                # Get data
+                print("Key '1' data:", db.get("1"))
+                  
+            </pre>
+        </section>
+        <section>
+            <h2 id="examples">Examples <a href="https://github.com/cyberkutti-iedc/SnailDB">SnailDB</a></h2>
+            <pre class="language-markup">
+                
+                
+                # Setup the database on db
+                db = SnailDB("my_database.json", "data")
+                # Example 1: Insert a document using insert() function
+                db.insert({"key": "1", "name": "Akhil", "age": 20})
+                # Example 2: Insert multiple documents using insert_all() function
+                db.insert_all({"key": "3", "name": "Jon", "age": 10}, {"key": "4", "name": "Ali", "age": 21})
+                  
+            </pre>
+            <pre class="language-markup">
+                
+                # Example 3: Update the database
+                # For updating the database, use the key value.
+                db.update("1", {"name": "John", "age": 31})
+    
+                # Example 4: View the database
+                # Print data without pretty formatting:
+                print(db.get("1"))
+    
+                # Print data with pretty formatting:
+                print(db.get("1", pretty=True))
+                  
+            </pre>
+            <pre class="language-markup">
+                
+                # Example 5: View all the database
+                # Print all data without pretty formatting:
+                print(db.get_all())
+    
+                # Print all data with pretty formatting:
+                print(db.get_all(pretty=True))
+                  
+            </pre>
+        </section>
+        <section>
+            <h2 id="delete">Delete <a href="https://github.com/cyberkutti-iedc/SnailDB">SnailDB</a></h2>
+            <pre class="language-markup">
+                
+                
+                # Example 6: Delete data
+                # For deleting data, enter the key
+                db.delete("2")
+    
+                # Example 7: Delete the entire database
+                # The db database will be deleted
+                db.drop()
+                  
+            </pre>
+        </section>
+        <section>
+            <h2 id="query">Query <a href="https://github.com/cyberkutti-iedc/SnailDB">SnailDB</a></h2>
+            <pre class="language-markup">
+                
+                
+                # Query Function without pretty formatting
+                test = db.query("age", "<", 30)
+                print(test)
+                # Query Function with pretty formatting
+                test = db.query("age", "<", 30, pretty=True)
+                print(test)
+                # We can use all operators
+                #Greater Operator
+                test = db.query("age", ">", 30, pretty=True)
+                print(test)
+                #Lesser Operator
+                test = db.query("age", "<", 30, pretty=True)
+                print(test)
+                #Equal to operator
+                test = db.query("name", "=", "Ali", pretty=True)
+                print(test)
+                # Lesser and Equal to operator
+                test = db.query("age", "<=", 29, pretty=True)
+                print(test)
+                # Greater and Equal to operator
+                test = db.query("age", ">=", 29, pretty=True)
+                print(test)
+                # Not Equal to operator
+                test = db.query("age", "!=", 29, pretty=True)
+                print(test)
+                # Query Method with Skip Method
+                test = db.query("age", "<", 30, skip=1, pretty=True)
+                print(test)
+                # Query Method with Limt method
+                test = db.query("age", "<", 30, limt=1, pretty=True)
+                print(test)
+                # Query Method with Limt method and skip method
+                test = db.query("age", "<", 30, skip=1, limt=1, pretty=True)
+                print(test)
+                print("Key '1' data:", db.get("1"))
+                  
+            </pre>
+        </section>
+    </article>
+</main> 
+    <footer class="bg-gray-200 py-4 text-center">
+      <div class="container mx-auto px-4">
+          <p class="text-gray-800">SnailDB was created by <a href="https://github.com/cyberkutti-iedc/" class="text-gray-800">Cyber Kutti</a> and is licensed under the MIT license.</p>
+          <small class="block">&copy; 2024 ECOCEE</small>
+          <address class="block text-gray-800">Contact us: ecoceeteaam@gmail.com</address>
+      </div>
+  </footer>
+         
+          
+          
+          
+
+<script>
+  // Bind to the click of all links with a #hash in the href
+  $('a[href^="#"]').click(function(e) {
+    // Prevent the jump and the #hash from appearing on the address bar
+    e.preventDefault();
+    // Scroll the window, stop any previous animation, stop on user manual scroll
+    // Check https://github.com/flesler/jquery.scrollTo for more customizability
+    $(window).stop(true).scrollTo(this.hash, {duration:500, interrupt:false});
+  });
+  </script>
+   
+ <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag-commonmark.js"></script>   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>  
+
+   
+</body>
+</html>
